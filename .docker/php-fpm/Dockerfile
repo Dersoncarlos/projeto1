@@ -31,10 +31,6 @@ RUN apt-get update \
     && apt-get -y install zip \
     && apt-get clean; 
 
-# install PHP extension mongodb
-RUN pecl install mongodb \
-    && docker-php-ext-enable mongodb
-    
 #LIBS EXTRAS
 RUN docker-php-ext-install bcmath
 RUN apt-get install -y libbz2-dev
@@ -42,9 +38,9 @@ RUN docker-php-ext-install bz2
 
 #GD
 RUN apt-get update && apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libpng-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
 
