@@ -53,7 +53,7 @@ class UrlsController extends Controller
         $data['response'] = $call->getBody()->getContents();
 
         $data['status_code'] = $call->getStatusCode();
-        
+
         $data['user_id'] = Auth::id();
 
         $url = $this->urlRepo->createUrl($data);
@@ -71,7 +71,7 @@ class UrlsController extends Controller
     {
         $url = $this->urlRepo->findUrlById($id);
 
-        return view('urls.show',compact('url'));
+        return view('urls.show', compact('url'));
     }
 
     /**
@@ -85,5 +85,18 @@ class UrlsController extends Controller
         $this->urlRepo->removeUrlById($id);
 
         return response()->json("Url Removida.");
+    }
+
+    /**
+     * lista as url cadastradas e atualiza o registro
+     *
+     * @return bool
+     */
+    public function listAndUpdate()
+    {
+
+        $urls = $this->urlRepo->listUrlsByUserId(Auth::id());
+
+        return response()->json($urls);
     }
 }
