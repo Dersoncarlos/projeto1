@@ -1,1 +1,3 @@
-{{$url->response}}
+<?php 
+
+echo $url->response
