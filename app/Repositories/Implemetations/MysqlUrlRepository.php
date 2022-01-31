@@ -40,4 +40,10 @@ class MysqlUrlRepository implements UrlRepository
     {
         return $this->model->findOrFail($urlId);
     }
+
+    public function updateUrlById(int $urlId): bool
+    {
+        $obj = $this->model->findOrFail($urlId);
+        return $obj->update();
+    }
 }
