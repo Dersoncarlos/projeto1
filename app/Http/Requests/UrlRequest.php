@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Route;
 
 class UrlRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UrlRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +24,16 @@ class UrlRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $rule = [];
+
+        $route = Route::currentRouteAction();
+        $name = explode('@', $route);
+        switch (end($name)) {
+            case 'store':
+                $rule['url'] = ['required', 'url'];
+                break;
+        }
+
+       return $rule;
     }
 }
