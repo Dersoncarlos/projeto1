@@ -19,6 +19,14 @@
         "popper.js": "^1.12",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass-loader": "^8.0.0",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "i": "^0.3.7",
+        "icheck-bootstrap": "^3.0.1",
+        "npm": "^8.4.0",
+        "overlayscrollbars": "^1.13.1"
     }
 }
