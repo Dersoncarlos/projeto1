@@ -19,10 +19,6 @@ public/js/app.js
 public/css/app.css
 .phpunit.result.cache
 storage/logs/laravel.log
-storage/app/upload/*
-storage/
-public/storage/*
-public/storage
 
 
 
