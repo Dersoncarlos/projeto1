@@ -1,5 +1,4 @@
 node_modules
-papaleguas-delivery.json
 /vendor/
 /public/hot
 /storage/*.key
@@ -15,8 +14,6 @@ yarn-error.log
 /.vscode
 # package-lock.json
 yarn.lock
-public/js/app.js
-public/css/app.css
 .phpunit.result.cache
 storage/logs/laravel.log
 
