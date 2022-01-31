@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'urls'], function () {
+    Route::get('/', 'UrlsController@index')->name('index');
+    Route::get('/list', 'UrlsController@list')->name('list');
+    Route::post('/store', 'UrlsController@store')->name('store');
+    Route::delete('/destroy/{id}','UrlsController@destroy')->name('destroy');
+    Route::get('/show/{id}','UrlsController@show')->name('show');
+});
