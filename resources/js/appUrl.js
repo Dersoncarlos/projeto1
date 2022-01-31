@@ -27,7 +27,7 @@ function pageEvents() {
                     getListUrls();
                     $('#modal-default').modal('hide');
                 },
-                error: function () {
+                error: function (res) {
                     if (res.status === 422) {
                         alert("Url Inválida");
                     } else {

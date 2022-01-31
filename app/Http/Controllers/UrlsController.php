@@ -6,6 +6,7 @@ use App\Repositories\UrlRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
+use App\Http\Requests\UrlRequest;
 
 class UrlsController extends Controller
 {
@@ -40,7 +41,7 @@ class UrlsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UrlRequest $request)
     {
 
         $client = new Client();
